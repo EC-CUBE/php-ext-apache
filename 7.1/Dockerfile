@@ -10,9 +10,14 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
         mbstring zip gd xml pdo pdo_pgsql pdo_mysql soap mcrypt \
         && rm -r /var/lib/apt/lists/*
 
-ENV COMPOSER_ALLOW_SUPERUSER=1
 RUN curl -sS https://getcomposer.org/installer | php -- \
         --filename=composer \
         --install-dir=/usr/local/bin
+
+RUN chown -R www-data: /var/www
+
+USER www-data
 RUN composer global require --optimize-autoloader \
         "hirak/prestissimo"
+
+USER root
