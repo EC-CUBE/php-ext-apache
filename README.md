@@ -20,6 +20,7 @@ Docker image for php:*-apache with additional to PHP extensions
 - pdo_mysql
 - soap
 - mcrypt
+- intl
 
 and Composer
 
