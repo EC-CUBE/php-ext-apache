@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
         && docker-php-ext-install -j$(nproc) \
         mbstring zip gd xml pdo pdo_pgsql pdo_mysql soap mcrypt intl \
         && rm -r /var/lib/apt/lists/*
-
+RUN a2enmod rewrite
 RUN curl -sS https://getcomposer.org/installer | php -- \
         --filename=composer \
         --install-dir=/usr/local/bin
