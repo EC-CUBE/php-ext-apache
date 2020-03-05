@@ -5,6 +5,7 @@ MAINTAINER Kentaro Ohkouchi <nanasess@fsm.ne.jp>
 RUN mkdir -p /usr/share/man/man1 /usr/share/man/man7
 RUN apt-get update && apt-get install --no-install-recommends -y \
             curl \
+            default-mysql-client \
             git \
             libfreetype6-dev \
             libicu-dev \
@@ -14,7 +15,6 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
             libpq5 \
             libxml2-dev \
             libzip-dev \
-            mysql-client \
             postgresql-client \
             ssl-cert \
             sudo \
